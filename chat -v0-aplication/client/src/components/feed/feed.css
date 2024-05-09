@@ -1,0 +1,28 @@
+.feed-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 6px;
+    container-type: inline-size;
+    container-name: feedSection;
+
+}
+
+.section-feed-intro {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h2{
+        text-transform: uppercase;
+    }
+    
+}
+@container feedSection (max-width: 660px){
+    .user-info-section {
+        display: none;
+    }
+}

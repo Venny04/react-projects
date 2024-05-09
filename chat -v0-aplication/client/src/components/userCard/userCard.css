@@ -1,0 +1,68 @@
+.user-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 3px 5px;
+    cursor: pointer;
+    /* transition: hover 140ms ease; */
+
+    &.active{
+        background-color: rgba(255, 255, 255, 0.107);
+    }
+
+    &:hover{
+        background-color: rgba(222, 221, 221, 0.076);
+    }
+
+    .current-user-avatar{
+        width: 42px;
+        height: 42px;
+        background-color: rgb(94, 93, 93);
+        font-size: 1em;
+    }
+    .user-details {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-block: 5px;
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .last-message-timer {
+                font-size: 12px;
+            }
+            h2{
+                font-size: 14.5px;
+                text-transform: capitalize;
+                color: rgb(197, 197, 197);
+                font-weight: 500;
+            }
+         
+            .last-message {
+                font-size: 12px;
+                color: rgb(157, 156, 156);
+                max-width: 243px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .has-new-message{
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: rgb(16, 181, 187);
+            }
+            abbr{
+                
+            }
+        }
+
+    }
+}

@@ -1,0 +1,33 @@
+.sidbar-section {
+    position: relative;
+    min-width: 320px;
+    max-width: 320px;
+    height: 100%;
+    background-color: #161616;
+
+    .sidbar-btn{
+        position: absolute;
+        bottom: 5%;
+        right: 6%;
+        width: 43px;
+        height: 43px;
+        background-color: #161616;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        cursor: pointer;
+        transition: transform 150ms ease-in-out;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.349), 0 0 0 3px rgba(0, 0, 0, 0.351), 0 0 0 4px rgba(0, 0, 0, 0.289);
+
+        &:hover{
+            transform: scale(1.05);
+            
+        }
+
+        svg{
+            color: rgb(236, 237, 237);
+        }
+    }
+}

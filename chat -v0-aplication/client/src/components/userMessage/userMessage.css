@@ -1,0 +1,27 @@
+.user-message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* padding-inline:5px 1.4em;
+    padding-left: 1.4em;     */
+    
+    .message-content{
+        max-width: 290px;
+        padding: 7px;
+        height: fit-content;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    &.left{
+        justify-content: flex-end;
+        .message-content{
+            background-color: rgba(73, 71, 71, 0.398);
+        }
+    }
+    &.right{
+        justify-content: flex-start;
+        .message-content{
+            background-color: rgb(122, 9, 107);
+        }
+    }
+}

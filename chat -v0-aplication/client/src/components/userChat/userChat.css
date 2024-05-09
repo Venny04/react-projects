@@ -1,0 +1,7 @@
+.user-chat-section {
+    flex-grow: 1;
+    background-color: #161616;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
