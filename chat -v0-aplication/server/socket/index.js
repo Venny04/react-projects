@@ -27,22 +27,28 @@ export const getResiveSocketid = (receveUserId) => {
 io.on('connection', (socket) => {
 
     const userid = socket.handshake.query.userid;
-    // console.log(userid)
+
     if (userid) userSocketio[userid] = socket.id;
+
     io.emit('getuseronline', Object.keys(userSocketio));
 
-    socket.on('typing', (id) => {
-        if (!id) return;
-        const userid = getResiveSocketid(id);
+    // socket.on('typing', (id) => {
+    //     if (!id) return;
+    //     const userid = getResiveSocketid(id);
+    //     console.log(userid);
+    //     if (userSocketio) {
+    //         io.to(userid).emit('typing', id);
+    //     }
+    // });
 
-        io.to(userid).emit('typing');
-    });
-
-    socket.on('stopTyping', (id) => {
-        if (!id) return;
-        const userid = getResiveSocketid(id);
-        io.to(userid).emit('stopTyping');
-    });
+    // socket.on('stopTyping', (id) => {
+    //     if (!id) return;
+    //     const userid = getResiveSocketid(id);
+    //     if (!userid) return;
+    //     console.log(userid);
+    //     delete userSocketio[userid];
+    //     io.to(userid).emit('stopTyping');
+    // });
 
     socket.on('disconnect', () => {
         console.log('user disconnect.');

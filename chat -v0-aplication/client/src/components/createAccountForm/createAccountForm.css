@@ -1,0 +1,79 @@
+form {
+    width: 500px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.074);
+    padding: 10px;
+    border-radius: 5px;
+    button {
+        padding: 8px 10px;
+        border: none;
+        background-color: rgb(6, 93, 93);
+        color: white;
+        width: 50%;
+        display: block;
+        margin: auto;
+        cursor: pointer;
+    }
+    h2{ 
+        text-align: center;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    .form-fields {
+        display: flex;
+        gap : 1em;
+        padding: 10px;
+        .image-field {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            min-height: 60px;
+            border-radius: 50%;
+            background-color: black;
+            cursor: pointer;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                object-fit: cover;
+            }
+        }
+        .form-input-fiels {
+            padding: 10px;
+            width: 100%;
+            .input-box {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 5px;
+                label{
+                    font-size: 13px;
+                    color: rgb(220, 218, 218);
+                    text-transform: capitalize;
+                }
+                input {
+                    position: relative;
+                    flex-grow: 1;
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding:  5px;
+                    border-bottom: 2.3px solid gray;
+
+                    &::before{
+                       content: '...';
+                       position: absolute;
+                       bottom: 0;
+                       left: 0;
+                       width: 100%;
+                       height: 3px;
+                       background-color: #da1515;
+                       z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}

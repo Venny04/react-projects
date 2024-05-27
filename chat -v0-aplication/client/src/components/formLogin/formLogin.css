@@ -31,9 +31,15 @@
     }   
     a{
         text-decoration: none;
-        padding: 7px 5px;
-        display: block;
+        padding: 10px 5px;
+        display: inline-block;
+        font-size: 14px;
         color: rgb(14, 168, 211);
+        &:hover{
+            text-decoration: underline;
+            color: rgb(6, 100, 126);
+
+        }
     }
     h2{
         padding: 10px;

@@ -32,13 +32,13 @@
         background-color: rgba(128, 128, 128, 0.136);
         padding-inline: 10px 5px;    
         border-radius: 16px;
-      
+        max-height: 35px;
         input{
             flex-grow: 1;
             border: none;
             outline: none;
             background-color: transparent;
-            padding: 8px 5px;
+            /* padding: 8px 5px; */
             &::placeholder{
                 color: rgb(219, 216, 216);
             }

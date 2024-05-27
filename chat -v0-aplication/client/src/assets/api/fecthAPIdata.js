@@ -4,6 +4,7 @@ import axios from "axios";
 
 
 export const fecthAPI = async (url, method, data, token, content) => {
+
     let headersList = {
         "Accept": "*/*",
         "Authorization": `Bearer ${token}`,

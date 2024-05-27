@@ -1,0 +1,24 @@
+.home-section {
+    width: 100%;
+    height: 100%;
+    background-color: var(--container-bg);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: 1500px;
+    margin: auto;
+    .primary-section{
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+}
+.error-personalizado {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: fit-content;
+    z-index: 2000000;
+}

@@ -1,0 +1,56 @@
+.chat-user-card {
+    width: 100%;
+    padding: 4px !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 160ms ease;
+    &:hover{
+        background-color: rgba(233, 231, 231, 0.38);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    &.seleted {
+        background-color: rgba(233, 231, 231, 0.38);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-right: 2px solid rgb(72, 156, 169);
+        box-shadow:  0 0 0  2px solid rgb(0, 0, 0);
+    }
+    .user-message {
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 220px;
+        width: 220px;
+        overflow: hidden;
+        font-size: small;
+        color: gray;
+        justify-content: space-between;
+
+    }
+  
+    .user-name{
+        font-size: smaller;
+        text-align: left;
+        text-transform: capitalize;
+        color: rgba(0, 0, 0, 0.855);
+        white-space: nowrap;
+        display: flex;
+        max-width: 240px;
+        overflow: hidden;  
+    }
+    .not-read-message{
+        position: absolute;
+        right: 0;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        display: block;
+        background-color: rgb(10, 170, 138);
+    }
+
+
+}

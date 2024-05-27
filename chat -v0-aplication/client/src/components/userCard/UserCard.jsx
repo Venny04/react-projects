@@ -44,20 +44,43 @@ const SmallAvatar = styled(Avatar)(({ theme }) => ({
   border: `2px solid ${theme.palette.background.paper}`,
 }));
 
-const UserCard = ({ avatar, name, userId }) => {
+const UserCard = ({key, avatar, name, userId, showDetails }) => {
   
-  const { usersOnline, setSeletedUser, seletedUser, userAuthToken, userMessages } = useContext(UserContext);
+  const { usersOnline, setSeletedUser, seletedUser, userAuthToken, userMessages,showList, setShowList } = useContext(UserContext);
   const isOnline = usersOnline.includes(userId);
 
   const [lastMessage, setLastMessage] = useState('');
   const [lastMessageTimer, setLastMessageTimer] = useState({});
+  const [confirmMessage, setconfirmMessage] = useState({});
 
+
+  const setConfirmMessageRead = async () => {
+    console.log('watch')
+
+    try {
+      const messageId = lastMessage?._id;
+      if(!messageId) return;
+
+      const data = {
+        messageId,
+      }
+      const respose = await fecthAPI(`http://localhost:8080/api/v1/message/update/${userId}`,"PUT",data, userAuthToken,'');
+      if(!respose) return;
+
+      setLastMessage(respose);
+      setconfirmMessage(true);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
   useEffect(() => {
     const getUserMessageinfo = async () => {
+      console.log('watch')
       try {
         const respose = await fecthAPI(`http://localhost:8080/api/v1/message/get/${userId}`,"GET", '', userAuthToken,'');
         if(!respose) return;
-
+        console.log(respose);
         const message = respose[respose.length -1] || null;
         setLastMessage(message);
         setLastMessageTimer({
@@ -68,33 +91,47 @@ const UserCard = ({ avatar, name, userId }) => {
         console.log(error)
       }
     }
+    
     getUserMessageinfo();
+   
   }, [userId, userMessages]);
+
+  const hendlerSeleteUser = async () => {
+    setSeletedUser('');
+    
+    setSeletedUser({userId, name, avatar});
+    setConfirmMessageRead();
+    setShowList(false);
+  }
+ 
   return (
-    <li className={`user-card ${seletedUser?.userId == userId ? 'active': ''}`} onClick={() => setSeletedUser({userId, name, avatar})}>
+    <li key={key} className={`user-card ${seletedUser?.userId == userId ? 'active': ''}`} onClick={hendlerSeleteUser}>
         <Stack direction="row" spacing={2}>
             <StyledBadge
               overlap="circular"
               anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
               variant={isOnline && "dot"}
             >
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className='current-user-avatar' />
+              <Avatar alt={name} src={avatar ? avatar : "/static/images/avatar/1.jpg"} className='current-user-avatar' />
             </StyledBadge>
           </Stack>
         <div className='user-details'>
           <div>
             <h2 className='user-name'>{name}</h2>
-            <span className='last-message-timer'>{lastMessageTimer?.hours ?lastMessageTimer?.hours + ':'+lastMessageTimer?.minute : ''}</span>
+            <span className='last-message-timer'>{lastMessageTimer?.hours && showDetails ? lastMessageTimer?.hours + ':'+lastMessageTimer?.minute : ''}</span>
           </div>
           <div>
             <span className="last-message">
-              {lastMessage ? lastMessage?.receiverID == userId ?(
+              {lastMessage && showDetails ? lastMessage?.receiverID == userId ?(
               <span>voce: {lastMessage?.content}</span>)
-              :<span>{name?.split(' ')[0]}: {lastMessage?.content}</span>: 'sem messagem'}
+              :<span>{name?.split(' ')[0]}: {lastMessage?.content}</span>: ''}
             </span>
-         
-            {/* {lastMessage?.isRead == true && lastMessage?.receiverID == userId  ? (<DoneAllIcon />): ''}
-            */}
+              
+            {showDetails ?
+              lastMessage?.isRead == false && lastMessage ?.receiverID !== userId && seletedUser?.userId != userId ?  (<abbr title="essa mensagem ainda não foi lida" className='has-new-message'>
+              </abbr>) : lastMessage?.isRead == true && lastMessage?.receiverID == userId  ? (<DoneAllIcon className='view-icon'/>) : lastMessage?.isRead == false && lastMessage?.receiverID === userId && lastMessage?.isView ? (<DoneAllIcon style={{fontSize:"1em"}}/>) : ""
+            :''}
+           
           </div>
         </div>
     </li>

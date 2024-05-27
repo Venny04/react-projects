@@ -1,5 +1,6 @@
 import Chat from "../db/models/chat.js";
 import Message from "../db/models/messages.js";
+import User from "../db/models/user.js";
 import { getResiveSocketid, io } from "../socket/index.js";
 
 const sendMessage = async (req, res, next) => {
@@ -88,4 +89,46 @@ const updateMessage = async (req, res, next) => {
 
 }
 
-export { sendMessage, getCurrentUserMessages, updateMessage }
+const updateMessageView = async (req, res, next) => {
+    try {
+        const sender = req.params.id;
+
+        const receiver = req.user._id;
+
+        const messageId = req.body.messageId;
+
+        let message = await Message.findById(messageId);
+        if (!message) return;
+
+
+        if (sender === message?.senderID.toString() || receiver === message?.receiverID.toString()) {
+            const message = await Message.findByIdAndUpdate(messageId, { isView: true }, { new: true });
+            return res.status(200).json(message);
+        }
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json('Erros do servidor');
+    }
+
+}
+const typing = async (req, res, next) => {
+    try {
+        const user = await User.findById(req?.params?.id);
+
+        if (!user) return res.status(404).json("Usuario nao encontrado");
+
+        const userId = getResiveSocketid(user?._id);
+
+
+        if (!userId) return res.status(401).json('error')
+        io.to(userId).emit('typing', req.params.id);
+        console.log(userId, req.params.id)
+        res?.status(200).json('typing');
+    } catch (error) {
+        console.log(error)
+        res.status(500).json('Erros do servidor');
+    }
+}
+
+export { sendMessage, getCurrentUserMessages, updateMessage, updateMessageView, typing }

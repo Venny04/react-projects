@@ -33,30 +33,21 @@ const FormLogin = () => {
         }
     }
   return (
-   <Routes>
-       
-
-        <Route path='/'>
-            <Route index path='/' element={(
-                <form onSubmit={handleSubmit} className='form-filde'>
-                <h2>Login</h2>
-                <div className="form-input-fild">
-                    <label htmlFor="userEmail">Email</label>
-                    <input type="email" name='userEmail' id='userEmail' />
-                </div>
-                <div className="form-input-fild">
-                    <label htmlFor="userPassword">password</label>
-                    <input type="password" name='userPassword' id='userPassword' />
-                </div>
-                <button type='submit'>Login</button>
-                <Link to={'create-account'}>
-                    criar uma conta
-                </Link>
-                </form>
-            )} />
-            <Route path='/create-account' element={<h1>google</h1>} />
-        </Route>
-   </Routes>
+        <form onSubmit={handleSubmit} className='form-filde'>
+            <h2>Login</h2>
+            <div className="form-input-fild">
+                <label htmlFor="userEmail">Email</label>
+                <input type="email" name='userEmail' id='userEmail' />
+            </div>
+            <div className="form-input-fild">
+                <label htmlFor="userPassword">password</label>
+                <input type="password" name='userPassword' id='userPassword' />
+            </div>
+            <button type='submit'>Login</button>
+            <Link to={'login/create-account'}>
+                criar uma conta
+            </Link>
+        </form>
   )
 }
 

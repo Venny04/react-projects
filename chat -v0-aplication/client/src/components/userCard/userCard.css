@@ -7,7 +7,6 @@
     border-bottom-left-radius: 25px;
     padding: 3px 5px;
     cursor: pointer;
-    /* transition: hover 140ms ease; */
 
     &.active{
         background-color: rgba(255, 255, 255, 0.107);
@@ -59,10 +58,12 @@
                 border-radius: 50%;
                 background-color: rgb(16, 181, 187);
             }
-            abbr{
-                
-            }
+       
         }
 
+    }
+    .view-icon {
+        color:  rgb(16, 181, 187);
+        font-size: 1em;
     }
 }

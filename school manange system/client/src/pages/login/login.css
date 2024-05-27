@@ -1,0 +1,50 @@
+.container-login{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.974);
+    display: flex;
+    align-items: center;
+    
+
+    .school-desin-name {
+        position: absolute;
+        height: fit-content;
+        width: fit-content;
+        padding: 5px 1em;
+        transform: rotateZ(630deg);
+        background-color: rgb(28, 191, 186);
+        left: 28.5%;
+        z-index: 100;
+        text-transform: capitalize;
+        font-weight: bold;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.075);
+    }
+    justify-content: center;
+    .form-container {
+        width: 400px;
+        height: 300px;
+        box-shadow: 0 0 0  3px #1e1e1e0d;
+        margin:  auto;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        div{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+
+            gap: 10px;
+            input{
+                width: 100%;
+                padding: 5px;
+            }
+        }
+        h3{
+            padding: 1em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        /* align-items: center; */
+    }
+}

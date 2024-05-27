@@ -1,0 +1,117 @@
+.Chat-users-container {
+    flex-grow: 1;
+    width: 300px;
+    height: 100%;
+    color: black;
+    padding: 5px;
+    border-right: 2px solid rgb(176, 175, 175);
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        li.close-chat-btn{
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(221, 217, 217, 0.264);
+            border-radius: 50%;
+            cursor: pointer;
+            svg{
+                font-size: 15px;
+            }
+        }
+    }
+    .search-input-box {
+        padding-inline: 6px;
+        display: flex;
+        width: 100%;
+        background-color: rgba(227, 226, 226, 0.482);
+        border-radius: 1em;
+        .icon-box {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            flex-grow: 1;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 8px;
+        }
+        svg{
+            font-size: medium;
+        }
+    }
+    .filter-section {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 8px;
+        gap: 5px;
+        button{
+            padding: 5px 10px;
+            background-color: rgb(223, 221, 221);
+            border: none;
+            text-align: center;
+            border-radius: 10px;
+            color: black;
+            font-size: small;
+            transition: all 150ms ease;
+            cursor: pointer;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.072);
+
+            &:hover{
+                background-color: aliceblue;
+            }
+        }
+    }
+    .card-chat-users {
+        width: 100%;
+        height: 100%;
+        max-height: 270px;
+        overflow-y: auto;
+        &:hover{
+            &::-webkit-scrollbar{
+                width: 5px;
+            }
+        }
+        &::-webkit-scrollbar{
+            width: 0;
+            transition: all 150ms ease;
+        }
+        /* &::-webkit-scrollbar-track { */
+            /* background-color: #9a2121; Cor do fundo da barra de rolagem */
+          /* } */
+        &::-webkit-scrollbar-thumb{
+            background-color: rgba(47, 46, 46, 0.248);
+            border-radius: 20px;
+        }       
+        ul {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            flex-direction: column;
+            margin: 0;
+            padding: 5px;
+            gap: 5px;
+            li {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

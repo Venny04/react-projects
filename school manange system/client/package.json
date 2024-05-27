@@ -1,0 +1,51 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^41.4.2",
+    "@ckeditor/ckeditor5-react": "^7.0.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/roboto": "^5.0.13",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.17",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@mui/x-charts": "^7.3.1",
+    "@mui/x-data-grid": "^7.4.0",
+    "@mui/x-data-grid-generator": "^7.4.0",
+    "@mui/x-data-grid-premium": "^7.4.0",
+    "@react-pdf/renderer": "^3.4.4",
+    "axios": "^1.6.8",
+    "datatables.net-buttons": "^3.0.2",
+    "jszip": "^3.10.1",
+    "pdfmake": "^0.2.10",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.2.1",
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^6.23.1",
+    "recharts": "^2.12.7",
+    "socket.io-client": "^4.7.5",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "vite": "^5.2.0"
+  }
+}

@@ -24,6 +24,11 @@ const messageSchema = new Schema({
         required: true,
         default: false
     },
+    isView: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
     content: {
         type: String,
         required: true,

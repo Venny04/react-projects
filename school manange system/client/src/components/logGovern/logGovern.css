@@ -1,0 +1,40 @@
+.log-gove-conatiner {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 11px;
+    font-family: 'Times New Roman', Times, serif;
+
+    .school-title {
+        font-size: 1.9em;
+        font-weight: 500;
+        text-transform: capitalize;
+        strong{
+            text-transform: uppercase;
+        }
+    }
+ 
+    h3{
+        font-size: 12px;
+    }
+    .log-gover-title {
+        padding: 1em;
+        font-size: 1.7em;
+        text-transform: uppercase;
+    }
+    .gov-insinia {
+        width: 55px;
+        height: 55px;
+        /* background-color: rgb(255, 255, 255); */
+        border-radius: 50%;
+        padding: 1px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

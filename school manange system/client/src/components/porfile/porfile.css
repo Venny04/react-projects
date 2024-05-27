@@ -1,0 +1,242 @@
+.porfile-container {
+    width: 99%;
+    height: 100%;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar{
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: rgb(175, 174, 174);
+        border-radius: 20px;
+    }
+    .user-btns-options {
+        position: absolute;
+        top: 20%;
+        right: 10%;
+        display: flex;
+        align-items: center;
+        background-color: rgb(204, 201, 201);
+        gap: 5px;
+        width: 100px;
+        justify-content: space-around;
+        border-radius: 20px;
+        transition: all 150ms ease;
+        font-family: 'Times New Roman', Times, serif;
+
+        &:hover{
+            background-color: transparent;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            width: 30px;
+            height: 30px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            transition: all 150ms ease;
+
+            &:hover{
+                background-color: rgb(204, 201, 201);
+            }
+            justify-content: center;
+            cursor: pointer;
+            svg{
+                font-size: 1.3em;
+                color: black;
+
+            }
+        }
+    }
+    
+    .boletim-do-aluno-section {
+        width: 100%;
+        min-height: 500px;
+        height: fit-content;
+        text-align: center;
+        h3{
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: rgb(163, 162, 162);
+            padding: 1.4em 1em;
+            padding-bottom: 1em;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-block: 15px
+        }
+        article{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        justify-content: space-around;
+        padding:0 10px;
+        border-top: 3px solid gray;
+        table{
+            width: 500px;
+            border: 1px solid rgba(128, 128, 128, 0.535);
+            border-collapse: collapse;
+            th{
+                padding: 10px 1em;
+                text-transform: uppercase;
+                font-size: small;
+                background-color: rgb(13, 163, 174);
+                color: rgb(255, 255, 255);
+                font-weight: bolder;
+            }
+            td{
+                /* padding: 2px 12px; */
+                input {
+                    background-color: transparent;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    color: black;
+                }
+                text-align: center; 
+                font-size: 16px;
+                z-index: 2;
+               &:focus{
+                outline: 2px solid rgb(9, 215, 230);
+               }
+            }
+            td:nth-child(2){
+                background-color: rgba(195, 194, 194, 0.292);
+                text-align: left;
+                padding-inline: 6px 3px;
+                font-weight: 500;
+            }
+            td:first-child{
+                padding: 0 !important;
+                background-color: rgb(186, 185, 185);
+                width: 25px !important;
+                min-width: 25px !important;
+                height: 25px;
+            }
+            td,  tr{
+                border: 1px solid rgba(128, 128, 128, 0.646);
+
+            }
+
+            tbody{
+                .exel-ponter{
+                   
+                    z-index: 1;
+                    transition: all 140ms ease;
+                    pointer-events: 'none';
+                }
+            }
+        }
+    }
+  
+    .classe-school {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black !important;
+        width: 140px !important;
+        color: black !important;
+        font-size: 1.2em;
+        border-radius: 10px;
+        padding: 5px !important;
+        margin:  auto;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 30px;
+        input{
+            color: black !important;
+            width: fit-content !important;
+            max-width: 20px;
+            font-size: 1.1em;
+            padding: 0 !important;
+            text-align: center;
+        }
+    }
+    
+    .porfolio-info{
+        padding: 10px;
+        input{
+            background-color: rgba(128, 128, 128, 0.067);
+            background-color: transparent;
+            border: none;
+            outline: none;
+            padding: 5px;
+          
+            &:focus{
+                border-bottom: 3px solid rgb(8, 111, 229) !important;
+            }
+        }
+        button{
+            position: absolute;
+            background-color: rgba(233, 230, 230, 0.701);
+            border-radius: 50%;
+            outline: none;
+            border: none;
+            width: 19px;
+            height: 19px;
+            color: rgb(12, 25, 204);
+            padding: 2px;
+            top: 10%;
+            right: 3%;
+            cursor: pointer;
+            scale: 0;
+            transition: scale 140ms ease;
+            svg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        div{
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding:2px 7px;
+            font-size: 13.5px;
+            &.boletimN {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 10px;
+                white-space: nowrap;
+                .edit{
+                    display: inline-flex;
+                    color: red;
+                    padding:0 17px;
+                    border-bottom: 2px solid gray;
+                }
+            }
+            &:not(.edit-box){
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            &:hover{
+                button {
+                    scale: 1;
+                }
+            }
+            .edit-box {
+                color: rgb(13, 163, 174);
+                padding:2px 1em;
+                border-bottom: 2px solid rgb(13, 1, 24);
+                text-transform: capitalize;
+                font-size: 1.2em;
+                white-space: nowrap;
+                text-align: center;
+                background-color: rgba(235, 232, 232, 0.256);
+                display: inline-flex !important;
+                gap: 10px !important;
+            }
+            .nomecompleto {
+                min-width: 350px;
+            }
+        }
+    }
+}

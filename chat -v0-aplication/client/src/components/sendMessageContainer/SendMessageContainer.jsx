@@ -7,15 +7,12 @@ import { fecthAPI } from '../../assets/api/fecthAPIdata';
 import { useContext, useState } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { SocketContext } from '../../contexts/SocketContext';
-import MessageContext from '../../contexts/MessageContext';
 
 const SendMessageContainer = () => {
-  MessageContext();
   const { seletedUser, userAuthToken, setUserMessages} = useContext(UserContext);
-  const { socket } = useContext(SocketContext);
   const [message, setMessage] = useState('');
  
-  const handleTyping = (e) => {
+  const handleTyping = async (e) => {
     const target = e.currentTarget;
     const value = target?.value;
     if(!target) return;
@@ -23,12 +20,14 @@ const SendMessageContainer = () => {
 
     const id = seletedUser?.userId;
     if(!id) return;
-    socket?.emit('typing', id);
+    const content =  await fecthAPI(`http://localhost:8080/api/v1/message/typing/${id}`, 'POST', '', userAuthToken,'');
+
+    console.log(content);
   };
 
   const handleStopTyping = (e) => {
-    const id = seletedUser?.userId;
-    socket.emit('stopTyping', id);
+    // const id = seletedUser?.userId;
+    // socket.emit('stopTyping', id);
   };
   const handlerSendeMessageSubMit = async (e) => {
     e.preventDefault();

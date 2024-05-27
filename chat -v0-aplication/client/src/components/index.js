@@ -11,6 +11,7 @@ import UserChat from "./userChat/UserChat";
 import MessagesContainer from "./messagesContainer/MessagesContainer";
 import SendMessageContainer from "./sendMessageContainer/SendMessageContainer";
 import FormLogin from "./formLogin/FormLogin";
+import CreateAccountForm from "./createAccountForm/CreateAccountForm";
 export {
     Feed,
     Main,
@@ -23,6 +24,7 @@ export {
     UserMessage,
     MenuComponent,
     MessagesContainer,
+    CreateAccountForm,
     UsersListContainer,
     SendMessageContainer
 }

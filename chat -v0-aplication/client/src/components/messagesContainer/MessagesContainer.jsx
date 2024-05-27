@@ -13,13 +13,15 @@ const MessagesContainer = () => {
     if (!messagesContainer.current) return;
     
     messagesContainer.current.scrollTop = messagesContainer.current.scrollHeight;
-  }, [seletedUser,userMessages]);
+    messagesContainer.current.style.setProperty('--chat-message-background-image', `url(${seletedUser?.avatar})`);
+   
+  }, [seletedUser?.userId, userMessages]);
   return (
     <section className='messages-container' ref={messagesContainer}>
       <ul className='list-messages'>
         {
           userMessages?.map(({ content, senderID }) => (
-            <UserMessage  content={content} type={senderID == userAuth._id ?'left': 'right'}/>
+            <UserMessage  content={content.toString()} type={senderID == userAuth._id ?'left': 'right'}/>
           ))
         }
       </ul>

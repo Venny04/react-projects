@@ -12,8 +12,8 @@ const UsersListContainer = ({title}) => {
         <ul>
             {
              userChatList?.length < 1 ? (<h2 className='list-title'>Voce não tem nenhuma messagem <span>comesse uma nova conversa</span></h2>): (
-              userChatList?.map(({userName, _id}) => (
-                <UserCard name={userName} userId={_id} key={_id} />
+              userChatList?.map(({userName, _id, userAvatar}) => (
+                <UserCard name={userName} avatar={userAvatar} userId={_id} key={_id} showDetails={true} />
               ))
              )
             }

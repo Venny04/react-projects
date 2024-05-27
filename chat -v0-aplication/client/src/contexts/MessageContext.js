@@ -3,12 +3,11 @@ import { UserContext } from './UserContext';
 import { SocketContext } from './SocketContext';
 
 const MessageContext = () => {
-    const { setseletedUserNotificaions } = useContext(UserContext)
+    const { setseletedUserNotificaions, userAuth } = useContext(UserContext)
     const { socket } = useContext(SocketContext);
     useEffect(() => {
         const handleTyping = (data) => {
-            console.log('digitando')
-            setseletedUserNotificaions('digitando');
+            setseletedUserNotificaions(data);
         };
 
 

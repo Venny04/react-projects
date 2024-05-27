@@ -13,6 +13,7 @@ export const UserProvider = ({ children }) => {
     const [usersOnline, setUsersOnline] = useState([]);
     const [seletedUser, setSeletedUser] = useState(false);
     const [seletedUserNotificaions, setseletedUserNotificaions] = useState('');
+    const [showList, setShowList] = useState(false);
     
     useEffect(() => {
         const user = localStorage.getItem('feedUser') || null;
@@ -29,8 +30,8 @@ export const UserProvider = ({ children }) => {
             setUserChatList(response?.users);
         }
         getChatList();
-    }, []);
-
+    }, [seletedUser]);
+    
     const login = (user, token) => {
         localStorage.setItem('feedUser', JSON.stringify(user));
         localStorage.setItem('feedUserToken', JSON.stringify(token));
@@ -41,6 +42,7 @@ export const UserProvider = ({ children }) => {
     const contextValues = {
         login,
         userAuth, setUserAuth,
+        showList, setShowList,
         userMessages, setUserMessages,
         userChatList, setUserChatList,
         usersOnline,setUsersOnline,

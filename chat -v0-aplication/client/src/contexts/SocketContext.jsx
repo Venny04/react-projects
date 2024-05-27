@@ -30,6 +30,11 @@ export const SocketProvider = ({ children }) => {
               
                 return () => sock?.off('message');
             });
+            sock.on('typing', (userId) => {
+                // console.log(userId)
+                // setseletedUserNotificaions(userId);
+                return () => sock?.off('typing');
+            });
             const handleStopTyping = () => {
                 setseletedUserNotificaions('');
             };

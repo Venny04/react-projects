@@ -7,9 +7,12 @@
     align-items: center;
     padding: 3.4em 1em;
     .current-user-avatar{
-        width: 65px;
-        height: 65px;
+        width: 67px;
+        height: 67px;
         background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .details{
         display: flex;
@@ -17,17 +20,20 @@
         align-items: center;
         justify-content: center;
         gap:5px;
+        padding: 6px;
 
         h2{
-            font-size: 1.1em;
-            border-bottom: 2px solid aqua;
-            padding-bottom: 2px;
+            font-size: 1.2em;
+            display: flex;
+            text-transform: capitalize;
         }
         ul {
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 1.1em;
+            padding: 6px;
+
             li {
                
                 display: flex;
@@ -35,8 +41,8 @@
                 justify-content: center;
                 border-radius: 50%;
                 button{
-                    width: 29.5px;
-                    height: 29.5px;
+                    width: 33px;
+                    height: 33px;
                     background-color: rgba(255, 255, 255, 0.093);
                     color: rgb(195, 195, 195);
                 }

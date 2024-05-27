@@ -4,16 +4,29 @@ import Stack from '@mui/material/Stack';
 import { userInfoIcons } from '../../assets/listIcons';
 import { IconButton, Tooltip } from '@mui/material';
 import { Link } from 'react-router-dom';
-
 import './userInfo.css';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../contexts/UserContext';
 
 const UserInfo = () => {
+  const {seletedUser} = useContext(UserContext);
+  const [avatar, setAvatar] = useState(null);
+  const [name, setName] = useState(null);
+  useEffect(() => {
+    setAvatar(seletedUser?.avatar);
+    setName(seletedUser?.name);
+  }, [seletedUser])
+  const handleUpload = (e) => {
+    
+  }
   return (
     <article className='user-info-section'>
       <Stack direction="row" spacing={1.5} alignItems={'center'} flexDirection={'column'} justifyContent={'center'}>
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className='current-user-avatar' />
+        <Avatar alt={name} src={avatar ? avatar : "/static/images/avatar/1.jpg" }className='current-user-avatar' />
+        {/* <input type="file" name="upload" id="upload" onChange={handleUpload}/> */}
+        
         <div className="details">
-            <h2 className='current-user-name'>Mor</h2>
+            <h2 className='current-user-name'>{name}</h2>
             <nav>
               <ul>
                 {

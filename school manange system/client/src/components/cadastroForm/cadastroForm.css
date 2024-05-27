@@ -1,0 +1,65 @@
+form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1.4em; 
+    text-align: justify;
+    .nomecompleto {
+        input {
+            width: 600px;
+        }
+    }
+    .imagemDoAluno {
+        position: absolute;
+        top: -20%;
+        left: 10%;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.269);
+    }
+    div{
+        display: inline-flex;
+        font-size: 13px;
+        align-items: center;
+        gap: 2px;
+        padding: 5px 0;
+        font-family: "Robotos" sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        input{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid black;
+            padding: 0 10px;
+            color: black;
+            text-transform: capitalize;
+            font-size: 1em;
+            &:focus, &:focus-visible, &::target-text{
+                border-bottom: 2px solid rgb(12, 165, 185);
+            }
+            &::placeholder{
+                text-transform: lowercase;
+            }
+        }
+    }
+
+    button {
+        display: block;
+        margin-top: 30px;
+        width: 150px;
+        border: none;
+        padding: 10px;
+        background-color: rgb(7, 108, 121);
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(21, 153, 171);
+        }
+    }
+}

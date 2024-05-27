@@ -10,7 +10,7 @@ const App = () => {
       <BrowserRouter>
           <Routes>
             <Route path='/' index element={userAuth?<Home />:<Login />} />
-            <Route path='/login' index element={userAuth ?<Home />:<Login />} />
+            <Route path='/login/*' index element={userAuth ?<Home />:<Login />} />
           </Routes>
       </BrowserRouter>
     </section>

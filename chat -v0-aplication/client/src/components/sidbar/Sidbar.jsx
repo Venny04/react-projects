@@ -8,24 +8,27 @@ import { sidbarHeaderIcons } from '../../assets/listIcons';
 import './sidbar.css';
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../contexts/UserContext';
+import FindUserContainer from '../findUserContainer/FindUserContainer';
 
 const Sidbar = () => {
-  const {userAuth} = useContext(UserContext);
+  const {userAuth, setShowList, userMessages, seletedUser} = useContext(UserContext);
   const [userAvatar, setUserAvatar] = useState(null);
   const [userName, setUserName] = useState(null);
-  // const [userAvatar, setUserAvatar] = useState(null);
   useEffect(() => {
     if(!userAuth) return;
       setUserAvatar(userAuth?.userAvatar);
-  }, [userAuth]);
+  }, [userAuth, userMessages]);
   return (
     <menu className='sidbar-section'>
       <Header avatar={userAvatar} name={userName} iconsList={sidbarHeaderIcons} />
       <MenuComponent />
       <UsersListContainer />
       <div className="sidbar-btn">
-        <AddCommentIcon />
+        <abbr title="Nova Mensagem" onClick={() => setShowList(true)}>
+          <AddCommentIcon />
+        </abbr>
       </div>
+      <FindUserContainer />
     </menu>
   )
 }

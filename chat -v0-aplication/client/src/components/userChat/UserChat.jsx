@@ -26,10 +26,10 @@ const UserChat = ({ userid }) => {
     }
   
     getUserInfo();
-  }, [userid]);
+  }, [userid, seletedUser?.userId]);
   return (
     <article className='user-chat-section'>
-      <Header name={seletedUser?.name} 
+      <Header avatar={seletedUser?.avatar} name={seletedUser?.name} 
         iconsList={chatHeaderIcons} />
       <MessagesContainer />
       <SendMessageContainer />

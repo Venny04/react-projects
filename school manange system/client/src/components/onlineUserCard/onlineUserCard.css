@@ -1,0 +1,17 @@
+.user-online-avatar {
+    width: 43px !important;
+    height: 43px !important;
+    cursor: pointer;
+    transition: all 150ms ease;
+    .title-span {
+        & > * {
+            transition: all 150ms ease !important;
+            background-color: black !important;
+
+        }
+    }
+    &:hover{
+        transform: scale(1.2);
+        z-index: 3;
+    }
+}

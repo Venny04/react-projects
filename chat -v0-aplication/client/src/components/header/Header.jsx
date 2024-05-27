@@ -10,9 +10,9 @@ import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 
 const Header = ({ avatar, name, iconsList }) => {
-  const { seletedUserNotificaions,seletedUser, usersOnline, setseletedUserNotificaions } = useContext(UserContext);
+  const { seletedUserNotificaions, userAuth } = useContext(UserContext);
 
- 
+  
   return (
     <header className='header-section'>
       <Stack direction="row" spacing={1.5} alignItems={'center'} style={{width:"100%"}}>
@@ -21,7 +21,7 @@ const Header = ({ avatar, name, iconsList }) => {
           <div className="details">
             <h2 className='current-user-name'>{name}</h2>
             <span className='current-user-info'>{
-              seletedUserNotificaions && seletedUserNotificaions
+               seletedUserNotificaions?.userId == userAuth?._id ? seletedUserNotificaions?.message : ''
             }</span>
           </div>
         )}
@@ -30,7 +30,7 @@ const Header = ({ avatar, name, iconsList }) => {
           <ul>
             {
               iconsList?.map(({path, title, Icon}) => (
-                <li>
+                <li key={path}>
                   <Link to={path && path}>
                     <Tooltip title={title}>
                       <Badge color="default" variant="dot">

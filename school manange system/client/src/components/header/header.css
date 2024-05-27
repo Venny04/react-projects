@@ -1,0 +1,45 @@
+.header-section{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 1.8em;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.56);
+    .header-details {
+        display: flex;
+        align-items: center;
+        width: 265px;
+        justify-content: space-between;
+    }
+    a{
+        color: black;
+        &:hover{
+            color: gray;
+            text-decoration: underline;
+        }
+    }
+    nav{
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            button{
+                background-color: rgba(151, 149, 149, 0.161);
+                width: 28px;
+                height: 28px;
+            }
+            svg{
+                font-size: large;
+                
+            }
+            .MuiBadge-badge {
+                transform: translateY(0);
+            }
+        }
+    }
+    a {
+     text-decoration: none;
+    }
+}

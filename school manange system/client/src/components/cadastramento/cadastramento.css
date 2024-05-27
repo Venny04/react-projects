@@ -1,0 +1,12 @@
+.cadastramento-container {
+    width: 98%;
+    height: 100%;
+    /* overflow-y: auto; */
+    &::-webkit-scrollbar{
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: rgb(175, 174, 174);
+        border-radius: 20px;
+    }
+}
